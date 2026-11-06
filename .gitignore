@@ -1,0 +1,12 @@
+# Buildroot output / local system state / binaries
+work/
+.cache/
+*.log
+*.pyc
+__pycache__/
+.DS_Store
+*.swp
+*.tmp
+logs/testes/*
+!logs/testes/.gitkeep
+!docs/preview-mrbe-tv.png

@@ -1,0 +1,6 @@
+config BR2_PACKAGE_MRBE_LAUNCHER
+    bool "mrbe-launcher"
+    depends on BR2_USE_MMU
+    help
+      Minimal MRBE TV launcher. Draws directly to Linux fbdev and reads
+      remote/keyboard events through evdev. No X11, Wayland, SDL or browser.

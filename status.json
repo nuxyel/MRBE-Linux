@@ -1,0 +1,39 @@
+{
+  "project": "MRBE Linux TV",
+  "version": "0.4.0",
+  "date": "2026-11-06",
+  "architecture": "aarch64",
+  "board": "qemu-virt",
+  "ram_target_mib": 1024,
+  "buildroot_version": "2025.02.19",
+  "linux_kernel": "6.12.27",
+  "brand_identity": {
+    "crest": "integrated_rgba_256",
+    "palette": [
+      "charcoal",
+      "emerald",
+      "gold",
+      "silver"
+    ],
+    "screens": [
+      "home",
+      "apps",
+      "settings"
+    ]
+  },
+  "buildroot_image": "needs_0.4_rebuild_on_user_WSL",
+  "qemu_boot": "0.2_reported_working_by_user; 0.4_pending",
+  "qemu_gui": "0.4_pending_user_test",
+  "hardware_mxq_pro": "blocked_soc_unknown",
+  "media_player": "not_included",
+  "drm_streaming": "not_included",
+  "phases": {
+    "base": "0.3_framebuffer_bootable_source_preserved",
+    "branding": "0.4_implemented_source_and_assets",
+    "static_tests": "passed_host_2026-11-06_12_tests",
+    "build": "pending_user_0.4_rebuild",
+    "qemu": "pending_user_0.4_test",
+    "lvgl_migration": "planned_0.5",
+    "hardware": "blocked"
+  }
+}

@@ -1,0 +1,28 @@
+MRBE Linux TV 0.2.0 - Validacao local (2026-11-05)
+Host: ambiente de autoria Linux x86_64
+RESULTADO: make test aprovado
+Testes Python: 8/8 aprovados
+Verificacao: Bash, sh, gcc -fsyntax-only, renderer C->PNG e runner QEMU simulado
+LIMITACAO: nenhum boot ARM64 real nem Buildroot foi compilado nesta entrega
+--- OUTPUT DE TESTES ---
+./scripts/dev/test-local.sh
+[1/5] Sintaxe scripts bash
+[2/5] Sintaxe scripts sh
+[3/5] C nativo, sem erros de compilacao
+[4/5] Documentos, config e JSON
+test_boot_marker (test_project.TestProject.test_boot_marker) ... ok
+test_config (test_project.TestProject.test_config) ... ok
+test_no_hardware_flash (test_project.TestProject.test_no_hardware_flash) ... ok
+test_status (test_project.TestProject.test_status) ... ok
+test_tree (test_project.TestProject.test_tree) ... ok
+test_fake_boot_marker (test_smoke.TestSmokeRunner.test_fake_boot_marker) ... ok
+test_fake_boot_without_marker (test_smoke.TestSmokeRunner.test_fake_boot_without_marker) ... ok
+test_missing_images (test_smoke.TestSmokeRunner.test_missing_images) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 2.375s
+
+OK
+[5/5] Binario host + preview
+Previa PNG: /mnt/data/mrbe-work/MRBE-Linux/docs/preview-mrbe-tv.png
+[APROVADO] Testes estaticos concluídos (NAO substituem o boot em QEMU)

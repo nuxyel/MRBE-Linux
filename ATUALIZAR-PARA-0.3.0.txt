@@ -1,0 +1,23 @@
+MRBE LINUX TV 0.3.0 - ATUALIZAR SEM APAGAR O PROJETO ANTIGO
+=============================================================
+
+1. No Ubuntu: cd ~ && explorer.exe .
+2. Copie o ZIP MRBE_Linux_0_3_0.zip para a pasta aberta.
+3. No Ubuntu, execute os comandos a seguir (sem colar simbolos extras):
+
+cd ~
+unzip -o MRBE_Linux_0_3_0.zip -d ~
+cd ~/MRBE-Linux
+chmod +x scripts/wsl/*.sh scripts/dev/*.sh
+make test
+JOBS=2 make ui-rebuild
+make check
+make smoke
+make gui
+
+O ZIP NAO contem work/: sua compilacao anterior e preservada.
+A compilacao nova deve rodar no seu WSL; nao foi executada aqui.
+Foco: setas, Enter, Esc, H (Home), A (Apps), S (Configuracoes).
+Os apps e o conteudo sao demonstrativos, sem streaming real nesta versao.
+
+Documentacao: docs/20-INTERFACE-TV-0.3.md

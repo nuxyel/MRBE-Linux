@@ -1,0 +1,25 @@
+#!/bin/sh
+echo "=== MRBE LINUX DIAGNOSTICS ==="
+echo
+echo "-- Kernel --"
+uname -a
+echo
+echo "-- Memory --"
+grep -E 'MemTotal|MemFree|MemAvailable|Buffers|Cached|SwapTotal|SwapFree' /proc/meminfo
+echo
+echo "-- Uptime --"
+cat /proc/uptime
+echo
+echo "-- Framebuffer --"
+ls -l /dev/fb* 2>/dev/null || echo "No framebuffer device"
+echo
+echo "-- Input --"
+ls -l /dev/input/event* 2>/dev/null || echo "No evdev input device"
+echo
+echo "-- Network --"
+for f in /sys/class/net/*/operstate; do
+    [ -f "$f" ] && printf '%s: ' "$f" && cat "$f"
+done
+echo
+echo "-- Processes --"
+ps
