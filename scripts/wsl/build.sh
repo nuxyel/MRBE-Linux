@@ -18,7 +18,7 @@ if [ -x /usr/bin/gnuinstall ]; then
     ln -sfn /usr/bin/gnuinstall "$WORK/host-tools/install"
     export PATH="$WORK/host-tools:$PATH"
 fi
-chmod +x "$ROOT/board/qemu-aarch64/rootfs-overlay/etc/init.d/S99mrbe"  "$ROOT/board/qemu-aarch64/rootfs-overlay/usr/bin/mrbe-diagnostico"  "$ROOT/board/qemu-aarch64/rootfs-overlay/usr/bin/mrbe-info"
+chmod +x "$ROOT/board/qemu-aarch64/rootfs-overlay/etc/init.d/S05mrbe-launcher" "$ROOT/board/qemu-aarch64/rootfs-overlay/etc/init.d/S99mrbe"  "$ROOT/board/qemu-aarch64/rootfs-overlay/usr/bin/mrbe-diagnostico"  "$ROOT/board/qemu-aarch64/rootfs-overlay/usr/bin/mrbe-info"
 for tool in make tar sha256sum; do command -v "$tool" >/dev/null || { echo "Dependencia ausente: $tool"; exit 2; }; done
 if [ ! -f "$BR_SRC/Makefile" ]; then
     echo "[MRBE] Obtendo Buildroot LTS $BR_VERSION"
