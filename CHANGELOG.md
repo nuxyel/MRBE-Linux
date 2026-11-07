@@ -1,5 +1,8 @@
 # Changelog
 
+## Nao lancado
+- `make profile`: perfil de boot no QEMU com as initcalls mais lentas, o kernel ate o init, os maiores intervalos do console e a memoria com o launcher na tela.
+
 ## 0.4.0 - 2026-11-06
 - Adota o brasao MRBE com coroa, escudo, monitor/play e mascote Linux como identidade do sistema.
 - Integra o asset RGBA transparente ao launcher framebuffer, sem biblioteca de imagem adicional.
