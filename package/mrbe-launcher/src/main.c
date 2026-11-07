@@ -10,7 +10,7 @@ int main(int argc, char **argv)
 {
     MrbeFramebuffer fb;
     MrbeInput input;
-    MrbeUIState ui;
+    MrbeUIState ui, previous;
     int key;
 
     if (argc > 1 && strcmp(argv[1], "--version") == 0) {
@@ -30,15 +30,21 @@ int main(int argc, char **argv)
     mrbe_ui_init(&ui);
     mrbe_input_open(&input);
     mrbe_ui_draw(&fb, &ui);
+    mrbe_fb_present(&fb);
     for (;;) {
         if (input.count == 0) {
             sleep(1);
             mrbe_input_open(&input);
         }
-        key = mrbe_input_next(&input, 150);
+        /* Block until input arrives: no periodic wakeups while idle. */
+        key = mrbe_input_next(&input, -1);
         if (key == MRBE_KEY_NONE) continue;
+        previous = ui;
         mrbe_ui_handle_key(&ui, key);
+        /* Keys that change nothing (LEFT on the first item, etc.) skip the redraw. */
+        if (memcmp(&previous, &ui, sizeof(ui)) == 0) continue;
         mrbe_ui_draw(&fb, &ui);
+        mrbe_fb_present(&fb);
     }
     /* Normally the launcher is stopped by init SIGTERM. */
     mrbe_input_close(&input);
