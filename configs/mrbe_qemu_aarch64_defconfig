@@ -2,8 +2,11 @@
 # Buildroot 2025.02.19 LTS; esta e uma plataforma virtual, NAO e uma imagem MXQ Pro.
 BR2_aarch64=y
 BR2_cortex_a53=y
-BR2_TOOLCHAIN_BUILDROOT_MUSL=y
-BR2_PACKAGE_HOST_LINUX_HEADERS_CUSTOM_6_12=y
+# Toolchain pre-compilada da Bootlin (gcc 13.3, musl): nao compila gcc,
+# binutils e musl em cada maquina.
+BR2_TOOLCHAIN_EXTERNAL=y
+BR2_TOOLCHAIN_EXTERNAL_BOOTLIN=y
+BR2_TOOLCHAIN_EXTERNAL_BOOTLIN_AARCH64_MUSL_STABLE=y
 BR2_INIT_BUSYBOX=y
 # /dev vem do devtmpfs do kernel. O mdev fazia coldplug de modulos no boot:
 # 2,2 s para carregar um unico modulo que nada usa.

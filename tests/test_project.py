@@ -14,7 +14,7 @@ class TestProject(unittest.TestCase):
     def test_config(self):
         c=(ROOT/'configs/mrbe_qemu_aarch64_defconfig').read_text()
         self.assertIn('BR2_aarch64=y',c)
-        self.assertIn('BR2_TOOLCHAIN_BUILDROOT_MUSL=y',c)
+        self.assertIn('BR2_TOOLCHAIN_EXTERNAL_BOOTLIN_AARCH64_MUSL_STABLE=y',c)
         self.assertIn('BR2_LINUX_KERNEL_CUSTOM_CONFIG_FILE="$(BR2_EXTERNAL_MRBE_PATH)/board/qemu-aarch64/linux.config"',c)
         self.assertNotIn('board/qemu/aarch64-virt/linux.config',c)
         self.assertNotIn('BR2_GLOBAL_PATCH_DIR="board/qemu/patches"',c)
