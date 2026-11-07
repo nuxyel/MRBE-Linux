@@ -71,3 +71,19 @@ Codigo original do launcher: MIT. O **conjunto do projeto** usa diversos pacotes
 com licencas proprias (kernel Linux GPL-2.0-only, BusyBox GPL-2.0-only,
 Buildroot GPL-2.0-or-later); siga os requisitos de distribuicao de cada pacote.
 Nao redistribuir codigos proprietarios nem marcas ou logos de Google/Netflix.
+
+<!-- MRBE-DOCS-070:START -->
+
+## Documentação técnica — MRBE TV OS 0.7.0
+
+- [Instalação em outra máquina](docs/30-GUIA-INSTALACAO-MRBE-070.md)
+- [Buildroot e correções](docs/31-BUILDROOT-CORRECOES-070.md)
+- [Qualidade, APIs e estabilidade](docs/32-QUALIDADE-TESTES-API-070.md)
+
+**Estado:** versão experimental. A compilação ARM64
+e os testes completos no QEMU ainda precisam
+ser homologados.
+
+**Observação de versionamento:** o arquivo `VERSION` nesta branch informa `0.4.0`, diferente do nome da branch. Essa divergência precisa ser revisada antes de uma release oficial.
+
+<!-- MRBE-DOCS-070:END -->
